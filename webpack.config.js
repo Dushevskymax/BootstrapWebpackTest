@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   entry: './src/js/main.js',
@@ -9,7 +9,8 @@ module.exports = {
   devServer: {
     static: path.resolve(__dirname, 'dist'),
     port: 8080,
-    hot: true
+    hot: true,
+    open: true
   },
   module: {
     rules: [
@@ -36,7 +37,21 @@ module.exports = {
             loader: 'sass-loader'
           }
         ]
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|webp|svg)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[name][ext]'
+        }
+      },
+      {
+        test: /\.(mp4|webm|ogg)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'videos/[name][ext]'
+        }
       }
     ]
   }
-}
+};

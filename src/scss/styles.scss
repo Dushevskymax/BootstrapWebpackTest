@@ -1,44 +1,74 @@
-// Custom.scss
-// Вариант Б. Включите части Bootstrap
+// Переопределяем карту $font-sizes
+$font-sizes: (
+  1: 4rem,
+  2: 3.5rem,
+  3: 3rem,
+  4: 2.5rem,
+  5: 2rem,
+  6: 1.5rem,
+  7: 1.2rem,
+  8: 0.9rem
+);
 
-// 1. Сначала включите функции (чтобы Вы могли управлять цветами, SVG, вычислением и т.д.)
-@import "/node_modules/bootstrap/scss/functions";
+// Переопределяем карту $position-values
+$position-values: (
+  0: 0,
+  10: 10px,
+  20: 20px,
+  30: 30px,
+  40: 40px,
+  50: 50px,
+  60: 60px,
+  70: 70px,
+  80: 80px,
+  90: 90px,
+  100: 100px,
+  200: 200px,
+  215: 215px,
+  270: 270px,
+  300: 300px
+);
 
-$body-bg: #000;
-$body-color: #111;
+// Переопределяем цвет secondary
+$secondary: #6f42c1;
+$info: #d8d8d8;
 
-// Обязательные
-@import "/node_modules/bootstrap/scss/variables";
-@import "/node_modules/bootstrap/scss/maps";
-@import "/node_modules/bootstrap/scss/mixins";
-@import "/node_modules/bootstrap/scss/root";
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
 
-// Дополнительные компоненты Bootstrap здесь
-@import "/node_modules/bootstrap/scss/reboot";
-@import "/node_modules/bootstrap/scss/type";
-// etc
-// 2. Включите сюда любые переопределения переменных по умолчанию
+// Переопределите карту $spacers
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 7,
+  7: $spacer * 9,
+  8: $spacer * 17,
+  9: $spacer * 19,
+  10: $spacer * 35
+);
 
-// 3. Включите оставшуюся часть необходимых таблиц стилей Bootstrap
-@import "/node_modules/bootstrap/scss/variables";
+@import "/node_modules/bootstrap/scss/bootstrap";
 
-// 4. Включите сюда любые переопределения карт по умолчанию
+.btn {
+  border-top-left-radius: 3px;   
+  border-top-right-radius: 35px;  
+  border-bottom-right-radius: 3px; 
+  border-bottom-left-radius: 35px; 
+}
 
-// 5. Include remainder of required parts
-@import "/node_modules/bootstrap/scss/maps";
-@import "/node_modules/bootstrap/scss/mixins";
-@import "/node_modules/bootstrap/scss/root";
+$custom-video-brightness: 45%;
+.video-brightness {
+  filter: brightness($custom-video-brightness);
+}
+// Пример применения фильтра для Bootstrap класса
+.bg-brightness {
+  @extend .bg-primary; // Наследуем фон из Bootstrap
+  @extend .video-brightness; // Применяем фильтр яркости
+}
 
-// 6. При необходимости включите любые другие части
-@import "/node_modules/bootstrap/scss/utilities";
-@import "/node_modules/bootstrap/scss/reboot";
-@import "/node_modules/bootstrap/scss/type";
-@import "/node_modules/bootstrap/scss/images";
-@import "/node_modules/bootstrap/scss/containers";
-@import "/node_modules/bootstrap/scss/grid";
-@import "/node_modules/bootstrap/scss/helpers";
 
-// 7. При желании добавьте API утилит в последнюю очередь, чтобы генерировать классы на основе карты Sass в `_utilities.scss`
-@import "/node_modules/bootstrap/scss/utilities/api";
 
-// 8. Добавьте сюда дополнительный пользовательский код
