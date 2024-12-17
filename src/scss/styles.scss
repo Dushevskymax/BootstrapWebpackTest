@@ -10,28 +10,10 @@ $font-sizes: (
   8: 0.9rem
 );
 
-// Переопределяем карту $position-values
-$position-values: (
-  0: 0,
-  10: 10px,
-  20: 20px,
-  30: 30px,
-  40: 40px,
-  50: 50px,
-  60: 60px,
-  70: 70px,
-  80: 80px,
-  90: 90px,
-  100: 100px,
-  200: 200px,
-  215: 215px,
-  270: 270px,
-  300: 300px
-);
-
-// Переопределяем цвет secondary
+// Переопределяем цвета
 $secondary: #6f42c1;
 $info: #d8d8d8;
+$gray: #949494;
 
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
@@ -46,8 +28,8 @@ $spacers: (
   5: $spacer * 3,
   6: $spacer * 7,
   7: $spacer * 9,
-  8: $spacer * 17,
-  9: $spacer * 19,
+  8: $spacer * 13,
+  9: $spacer * 18,
   10: $spacer * 35
 );
 
@@ -60,15 +42,15 @@ $spacers: (
   border-bottom-left-radius: 35px; 
 }
 
-$custom-video-brightness: 45%;
-.video-brightness {
-  filter: brightness($custom-video-brightness);
-}
-// Пример применения фильтра для Bootstrap класса
-.bg-brightness {
-  @extend .bg-primary; // Наследуем фон из Bootstrap
-  @extend .video-brightness; // Применяем фильтр яркости
-}
+// $custom-video-brightness: 45%;
+// .video-brightness {
+//   filter: brightness($custom-video-brightness);
+// }
 
+// .bg-brightness {
+//   @extend .bg-primary; 
+//   @extend .video-brightness; 
+// }
+// Так больше похоже на то, что в макете
 
 
