@@ -18,7 +18,7 @@ $gray: #949494;
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
 
-// Переопределите карту $spacers
+// Переопределяем карту $spacers
 $spacers: (
   0: 0,
   1: $spacer * 0.25,
@@ -26,7 +26,7 @@ $spacers: (
   3: $spacer,
   4: $spacer * 1.5,
   5: $spacer * 3,
-  6: $spacer * 7,
+  6: $spacer * 5,
   7: $spacer * 9,
   8: $spacer * 13,
   9: $spacer * 18,
@@ -36,9 +36,10 @@ $spacers: (
 @import "/node_modules/bootstrap/scss/bootstrap";
 
 .btn {
-  border-top-left-radius: 3px;   
+  border:none;
+  border-top-left-radius: 2px;   
   border-top-right-radius: 35px;  
-  border-bottom-right-radius: 3px; 
+  border-bottom-right-radius: 2px; 
   border-bottom-left-radius: 35px; 
 }
 
