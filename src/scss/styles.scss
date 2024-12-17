@@ -42,6 +42,10 @@ $spacers: (
   border-bottom-left-radius: 35px; 
 }
 
+  header .nav-link:hover {
+    color: #3f3f3f; 
+  }
+
 // $custom-video-brightness: 45%;
 // .video-brightness {
 //   filter: brightness($custom-video-brightness);
